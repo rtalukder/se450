@@ -1,3 +1,9 @@
+/*
+    Raquib Talukder
+    Homework 1
+    SE 450
+ */
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,11 +17,14 @@ class StudentTest {
     @Test
     public void testAddClass(){
         // Arrange
+        Student testStudent = new Student(1);
+        Class newClass = new Class("SE 450");
 
         // Act
+        testStudent.addClass(newClass);
 
         // Assert
-        fail("Implement this test method");
+        assertEquals("SE 450" + "\r\n", testStudent.getFormattedSchedule());
     }
 
     // Test that a class does not get added if maxNumberOfClasses
@@ -26,11 +35,21 @@ class StudentTest {
     public void testAddClassDoesntAddClassesIfMaxed(){
 
         // Arrange
+        Student testStudent = new Student(2);
+        Class firstClass = new Class("SE 450");
+        Class secondClass = new Class("SE 550");
+        Class thirdClass = new Class("SE 650");
 
         // Act
+        testStudent.addClass(firstClass);
+        testStudent.addClass(secondClass);
+        testStudent.addClass(thirdClass);
+
+        String expected = "";
+        expected+= firstClass.getName() + "\r\n" + secondClass.getName() + "\r\n";
 
         // Assert
-        fail("Implement this test method");
+        assertEquals(expected,testStudent.getFormattedSchedule());
     }
 
     // Test the formatting of the schedule when getFormattedSchedule is called.
@@ -40,11 +59,19 @@ class StudentTest {
     public void testGetFormattedSchedule(){
 
         // Arrange
+        Student testStudent = new Student(2);
+        Class firstClass = new Class("SE 450");
+        Class secondClass = new Class("SE 550");
 
         // Act
+        testStudent.addClass(firstClass);
+        testStudent.addClass(secondClass);
 
         // Assert
-        fail("Implement this test method");
+        String expected = "";
+        expected+= firstClass.getName() + "\r\n" + secondClass.getName() + "\r\n";
+
+        assertEquals(expected, testStudent.getFormattedSchedule());
     }
 
     // Test that if a student has no classes, when getFormattedSchedule is called
@@ -53,10 +80,12 @@ class StudentTest {
     public void testGetFormattedScheduleReturnsNoClassesAddedIfNoClasses(){
 
         // Arrange
+        Student testStudent = new Student(0);
 
         // Act
+        testStudent.getFormattedSchedule();
 
         // Assert
-        fail("Implement this test method");
+        assertEquals("No classes added.", testStudent.getFormattedSchedule());
     }
 }

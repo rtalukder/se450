@@ -1,3 +1,9 @@
+/*
+    Raquib Talukder
+    Homework 1
+    SE 450
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +17,7 @@ class Student {
     }
 
     void addClass(Class newClass){
-        if(classes.size() <= maxNumberOfClasses)
+        if(classes.size() < maxNumberOfClasses)
             classes.add(newClass);
     }
 
