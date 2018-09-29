@@ -1,19 +1,25 @@
 package pizza;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PizzaBuilder implements IPizzaBuilder {
+
+    private List<String> toppings = new ArrayList<>();
+    private String size;
 
     @Override
     public void addTopping(String topping) {
-        throw new Error("Not yet implemented");
+        this.toppings.add(topping);
     }
 
     @Override
     public void setSize(String size) {
-        throw new Error("Not yet implemented");
+        this.size = size;
     }
 
     @Override
     public Pizza getPizza() {
-        throw new Error("Not yet implemented");
+        return new Pizza(size, toppings);
     }
 }

@@ -2,18 +2,19 @@ package orders;
 
 import findOrderStrategy.FindOrderStrategyFactory;
 import findOrderStrategy.IFindOrderStrategy;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrderListTest {
     private OrderList orderList;
 
-    @Before
+    @BeforeEach
     public void setupOrdersForSearching(){
         List<Order> orders = new ArrayList<>();
         orders.add(new Order(new ArrayList<>(), "Jeffrey", "Sharpe", "1234567", "2980734"));
