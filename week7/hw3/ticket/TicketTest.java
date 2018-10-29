@@ -25,7 +25,7 @@ public class TicketTest {
         // arrange
         TicketBuilder tb = new TicketBuilder();
         tb.addTicket("Pearl Jam", 80)
-            .addMeetAndGreet();
+                .addMeetAndGreet();
         ITicket ticketToTest = tb.getTicket();
 
         // act
@@ -55,8 +55,8 @@ public class TicketTest {
         // arrange
         TicketBuilder tb = new TicketBuilder();
         tb.addTicket("Pearl Jam", 80)
-            .addMeetAndGreet()
-            .addBonusPackage();
+                .addMeetAndGreet()
+                .addBonusPackage();
         ITicket ticketToTest = tb.getTicket();
 
         // act
