@@ -25,12 +25,12 @@ public class MovieTicketTest {
     public void testMissionImpossibleFactory() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2018, 8,1, 10, 30);
-        IMovieTicketFactory movieTicketFactory = MovieTicketFactoryManager.getStarWarsMovieTicketFactory();
+        IMovieTicketFactory movieTicketFactory = MovieTicketFactoryManager.getMissionImpossibleMovieTicketFactory();
         IMovieTicket ticket = movieTicketFactory.createTicket(calendar);
 
-        assertEquals("Star Wars", ticket.getMovieName());
-        assertEquals("George Lucas", ticket.getDirector());
-        assertEquals("LucasFilm", ticket.getMovieStudio());
+        assertEquals("Mission Impossible", ticket.getMovieName());
+        assertEquals("JJ Abrams", ticket.getDirector());
+        assertEquals("DreamWorks", ticket.getMovieStudio());
         assertEquals(calendar, ticket.getShowtime());
     }
 
@@ -38,12 +38,12 @@ public class MovieTicketTest {
     public void testStarWarsFactory() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2018, 8,1, 10, 30);
-        IMovieTicketFactory movieTicketFactory = MovieTicketFactoryManager.getMissionImpossibleMovieTicketFactory();
+        IMovieTicketFactory movieTicketFactory = MovieTicketFactoryManager.getStarWarsMovieTicketFactory();
         IMovieTicket ticket = movieTicketFactory.createTicket(calendar);
 
-        assertEquals("Mission Impossible", ticket.getMovieName());
-        assertEquals("JJ Abrams", ticket.getDirector());
-        assertEquals("DreamWorks", ticket.getMovieStudio());
+        assertEquals("Star Wars", ticket.getMovieName());
+        assertEquals("George Lucas", ticket.getDirector());
+        assertEquals("LucasFilm", ticket.getMovieStudio());
         assertEquals(calendar, ticket.getShowtime());
     }
 }

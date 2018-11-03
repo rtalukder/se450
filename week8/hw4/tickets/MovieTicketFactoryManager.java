@@ -1,17 +1,22 @@
 package tickets;
 
+import java.util.Calendar;
+
 public class MovieTicketFactoryManager {
+    private static MovieTicket spidermanTicket = new MovieTicket("Spiderman", "MGM", "Steven Spielberg");
+    private static MovieTicket missionImpossibleTicket = new MovieTicket("Mission Impossible", "DreamWorks", "JJ Abrams");
+    private static MovieTicket starWarsTicket = new MovieTicket("Star Wars", "LucasFilm", "George Lucas");
 
     public static IMovieTicketFactory getMissionImpossibleMovieTicketFactory() {
-        throw new Error("Implement the MissionImpossibleMovieTicketFactory as a Singleton");
+        return MissionImpossibleSingleton.getInstance(new MovieFlyweight(missionImpossibleTicket));
     }
 
     public static IMovieTicketFactory getStarWarsMovieTicketFactory() {
-        throw new Error("Implement the StarWarsMovieTicketFactory as a Singleton");
+        return StarWarsSingleton.getInstance(new MovieFlyweight(starWarsTicket));
     }
 
     public static IMovieTicketFactory getSpidermanMovieTicketFactory() {
-        throw new Error("Implement the SpidermanMovieTicketFactory as a Singleton");
+        return SpidermanSingleton.getInstance(new MovieFlyweight(spidermanTicket));
     }
 
 }
